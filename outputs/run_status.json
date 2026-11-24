@@ -1,0 +1,42 @@
+{
+  "E1": {
+    "status": "ok",
+    "seconds": 0.0
+  },
+  "E2": {
+    "status": "ok",
+    "seconds": 2.5
+  },
+  "E3": {
+    "status": "ok",
+    "seconds": 1.7
+  },
+  "E4": {
+    "status": "ok",
+    "seconds": 0.0
+  },
+  "E5": {
+    "status": "ok",
+    "seconds": 1.0
+  },
+  "E6": {
+    "status": "ok",
+    "seconds": 3.0
+  },
+  "E7": {
+    "status": "ok",
+    "seconds": 3.8
+  },
+  "E8": {
+    "status": "ok",
+    "seconds": 1.5
+  },
+  "E9": {
+    "status": "ok",
+    "seconds": 0.1
+  },
+  "E10": {
+    "status": "ok",
+    "seconds": 0.5
+  }
+}

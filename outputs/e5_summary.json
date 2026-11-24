@@ -1,0 +1,44 @@
+{
+  "golden": {
+    "recall@1": 0.8056,
+    "recall@3": 0.9444,
+    "recall@5": 1.0,
+    "mrr": 0.8843,
+    "n": 36,
+    "answer_accuracy": 0.8611,
+    "faithfulness": 1.0,
+    "citation_accuracy": 0.9167,
+    "refusal_rate": 0.0,
+    "avg_input_tokens": 383.0556,
+    "avg_output_tokens": 19.0,
+    "latency_p50_s": 0.0051,
+    "latency_p95_s": 0.0059
+  },
+  "synthetic": {
+    "recall@1": 0.8333,
+    "recall@3": 0.9333,
+    "recall@5": 1.0,
+    "mrr": 0.8944,
+    "n": 30,
+    "answer_accuracy": 0.8667,
+    "faithfulness": 1.0,
+    "citation_accuracy": 0.7667,
+    "refusal_rate": 0.0,
+    "avg_input_tokens": 400.5333,
+    "avg_output_tokens": 26.7667,
+    "latency_p50_s": 0.0061,
+    "latency_p95_s": 0.0078
+  },
+  "judge_agreement": {
+    "n": 36,
+    "agreement": 0.8611,
+    "cohen_kappa": 0.5361,
+    "tp_both_correct": 27,
+    "tn_both_wrong": 4,
+    "judge_false_pass": 1,
+    "judge_false_fail": 4,
+    "golden_accuracy": 0.8611,
+    "judge_pass_rate": 0.7778
+  },
+  "n_failures": 5
+}

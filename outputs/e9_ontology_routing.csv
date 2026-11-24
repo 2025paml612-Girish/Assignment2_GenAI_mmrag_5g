@@ -1,0 +1,7 @@
+query,topics,modality,doc_type,entities,filter
+What time-to-trigger value was used after the A3 tuning in Cluster-400,mobility,,,Cluster-400,entity->1 docs
+Which cell was the top offender in week 259 for the South region?,ran,,,week 259,entity->1 docs
+What PCI is assigned to cell C955-2?,ran,table,,C955-2,entity->1 docs
+What was the actual E-RAB Drop Rate in week 928 for the North region?,,table,kpi_analysis,week 928,entity->1 docs
+What regression pass rate is shown in the figure for build R22.7.847?,testing,image,test_report,R22.7.847,entity->1 docs
+Which A1 policy ID appears in the RIC architecture figure of Region-55,oran,image,architecture,Region-559,entity->1 docs

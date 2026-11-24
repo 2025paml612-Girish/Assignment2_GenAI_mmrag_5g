@@ -1,0 +1,5 @@
+design,avg_input_tokens,avg_output_tokens,answer_accuracy,faithfulness,latency_p50_s,token_reduction_vs_naive
+naive: whole pages + raw images (zero-shot),1089.3333,19.0,0.8611,1.0,0.0054,0.0%
+"chunks, no compression (jinja2)",433.9444,19.0,0.8611,1.0,0.0051,60.2%
+final: top-k compressed chunks + OCR text (jinja2),383.0556,19.0,0.8611,1.0,0.0051,64.8%
+repeated query served from answer cache,0.0,0.0,,,0.0018011529998602782,100.0%

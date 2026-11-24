@@ -1,0 +1,122 @@
+[
+  {
+    "query": "What time-to-trigger value was used after the A3 tuning in Cluster-400?",
+    "rewritten_query": "What time-to-trigger value was used after the A3 tuning in Cluster-400?",
+    "answer": "Parameter Change The A3 offset for Cluster-400 was tuned from 5 dB to 3 dB with a time-to-trigger of 256 ms [1].",
+    "citations": [
+      {
+        "n": 1,
+        "chunk_id": "ho_kpi_cluster400-p1-x1",
+        "source": "ho_kpi_cluster400.pdf",
+        "page": 1,
+        "modality": "text"
+      }
+    ],
+    "retrieved": [
+      "ho_kpi_cluster400-p1-x1",
+      "ho_kpi_cluster400-p2-x0",
+      "ho_kpi_cluster400-p3-i0",
+      "ho_kpi_cluster400-p1-x0"
+    ],
+    "variant": "jinja2",
+    "refused": false,
+    "refusal_reason": "",
+    "grounding": 1.0,
+    "input_tokens": 372,
+    "output_tokens": 34,
+    "latency_s": 0.0053,
+    "timings": {
+      "guard_dos": 0.0,
+      "guard_input": 0.0,
+      "memory_rewrite": 0.0002,
+      "retrieval": 0.0045,
+      "guard_oos": 0.0,
+      "context_prompt": 0.0003,
+      "llm": 0.0002,
+      "guard_output": 0.0,
+      "total": 0.0053,
+      "context_tokens": 135.0
+    },
+    "from_cache": false
+  },
+  {
+    "query": "What PCI is assigned to cell C955-2?",
+    "rewritten_query": "What PCI is assigned to cell C955-2?",
+    "answer": "PCI for C955-2 is 53 [1].",
+    "citations": [
+      {
+        "n": 1,
+        "chunk_id": "cell_config_site955-p2-t0",
+        "source": "cell_config_site955.pdf",
+        "page": 2,
+        "modality": "table"
+      }
+    ],
+    "retrieved": [
+      "cell_config_site955-p2-t0",
+      "cell_config_site955-p2-x0",
+      "cell_config_site955-p1-x0",
+      "cell_config_site955-p1-x1"
+    ],
+    "variant": "jinja2",
+    "refused": false,
+    "refusal_reason": "",
+    "grounding": 1.0,
+    "input_tokens": 436,
+    "output_tokens": 11,
+    "latency_s": 0.005,
+    "timings": {
+      "guard_dos": 0.0,
+      "guard_input": 0.0,
+      "memory_rewrite": 0.0001,
+      "retrieval": 0.0042,
+      "guard_oos": 0.0,
+      "context_prompt": 0.0003,
+      "llm": 0.0003,
+      "guard_output": 0.0,
+      "total": 0.005,
+      "context_tokens": 197.0
+    },
+    "from_cache": false
+  },
+  {
+    "query": "What regression pass rate is shown in the figure for build R22.7.847?",
+    "rewritten_query": "What regression pass rate is shown in the figure for build R22.7.847?",
+    "answer": "Pass rate 98.7% [1].",
+    "citations": [
+      {
+        "n": 1,
+        "chunk_id": "release_note_847-p3-i0",
+        "source": "release_note_847.pdf",
+        "page": 3,
+        "modality": "image"
+      }
+    ],
+    "retrieved": [
+      "release_note_847-p3-i0",
+      "release_note_847-p3-x0",
+      "release_note_847-p2-x0",
+      "release_note_847-p1-x0"
+    ],
+    "variant": "jinja2",
+    "refused": false,
+    "refusal_reason": "",
+    "grounding": 1.0,
+    "input_tokens": 365,
+    "output_tokens": 10,
+    "latency_s": 0.0049,
+    "timings": {
+      "guard_dos": 0.0,
+      "guard_input": 0.0,
+      "memory_rewrite": 0.0002,
+      "retrieval": 0.0042,
+      "guard_oos": 0.0,
+      "context_prompt": 0.0003,
+      "llm": 0.0002,
+      "guard_output": 0.0,
+      "total": 0.0049,
+      "context_tokens": 114.0
+    },
+    "from_cache": false
+  }
+]

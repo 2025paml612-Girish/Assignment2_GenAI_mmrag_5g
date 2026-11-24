@@ -1,0 +1,37 @@
+qid,modality,answer,gold_correct,judge_pass,judge_grounded,judge_cited,judge_responsive,judge
+Q001,text,Parameter Change The A3 offset for Cluster-400 was tuned from 5 dB to 3 dB with a time-to-trigger of 256 ms [1].,1,1,1,1,1,heuristic-rubric
+Q002,text,Issue ID for ISS-325-5 is ISS-325-5 [4].,0,0,1,1,0,heuristic-rubric
+Q003,text,Issue ID for ISS-763-1 is ISS-763-1 [2].,0,1,1,1,1,heuristic-rubric
+Q004,text,"System Under Test The O-DU at Site-204 runs software build R24.4.6, integrated with O-RU firmware FW-3.0.68 [3].",1,1,1,1,1,heuristic-rubric
+Q005,text,"System Under Test The O-DU at Site-718 runs software build R23.1.2, integrated with O-RU firmware FW-4.6.63 [1].",1,1,1,1,1,heuristic-rubric
+Q006,text,"System Under Test The O-DU at Site-180 runs software build R24.3.3, integrated with O-RU firmware FW-4.5.72 [1].",1,1,1,1,1,heuristic-rubric
+Q007,text,In week 259 the top offender cell in the South region was C235-3 with a drop rate of 4.44% [1].,1,1,1,1,1,heuristic-rubric
+Q008,text,In Region-470 the Anomaly Detection xApp subscribes to E2SM-KPM reports every 250 ms [1].,1,1,1,1,1,heuristic-rubric
+Q009,text,"The O-DU at Site-106 runs software build R23.1.8, integrated with O-RU firmware FW-3.2.73 [1].",1,1,1,1,1,heuristic-rubric
+Q010,text,All cells of Site-846 use an SSB periodicity of 20 ms and the TDD pattern DDDSUDDSUU [2].,1,1,1,1,1,heuristic-rubric
+Q011,text,The UPF in Lab-658 was configured with an N3 MTU of 1450 bytes and the DNN mec.edge658 [2].,1,1,1,1,1,heuristic-rubric
+Q012,text,"The O-DU at Site-171 runs software build R25.3.8, integrated with O-RU firmware FW-3.5.88 [4].",1,1,1,1,1,heuristic-rubric
+Q013,table,PCI for C955-2 is 53 [1].,1,1,1,1,1,heuristic-rubric
+Q014,table,Data Collection In Region-396 the Slice Assurance xApp subscribes to E2SM-KPM reports every 500 ms [3].,0,0,1,1,0,heuristic-rubric
+Q015,table,Max for O-RU-328B is 1005 [1].,1,0,1,1,0,heuristic-rubric
+Q016,table,Avg Setup Time (ms) for PDU-01 is 89 [1].,1,1,1,1,1,heuristic-rubric
+Q017,table,HO Success Rate (%) for CL858-S1 is 98.4 [1].,1,1,1,1,1,heuristic-rubric
+Q018,table,Avg Setup Time (ms) for PDU-01 is 71 [1].,1,1,1,1,1,heuristic-rubric
+Q019,table,Actual for E-RAB Drop Rate (%) is 0.60 [1].,1,1,1,1,1,heuristic-rubric
+Q020,table,Max for O-RU-674B is 907 [1].,1,0,1,1,0,heuristic-rubric
+Q021,table,HO Success Rate (%) for CL970-S3 is 96.8 [2].,1,1,1,1,1,heuristic-rubric
+Q022,table,Actual for DL User Throughput (Mbps) is 396 [1].,1,1,1,1,1,heuristic-rubric
+Q023,table,PCI for C818-2 is 781 [1].,1,1,1,1,1,heuristic-rubric
+Q024,table,Avg Runtime (s) for Unlock Cell is 24.8 [1].,1,1,1,1,1,heuristic-rubric
+Q025,image,Pass rate 98.7% [1].,1,1,1,1,1,heuristic-rubric
+Q026,image,Max time error 862 ns [1].,1,1,1,1,1,heuristic-rubric
+Q027,image,Worst hour 10:00 [1].,1,1,1,1,1,heuristic-rubric
+Q028,image,Fronthaul VLAN 2195 NG 25GE [1].,1,1,1,1,1,heuristic-rubric
+Q029,image,HOSuccess Rate-Cluster-801 [1].,0,0,1,1,0,heuristic-rubric
+Q030,image,Worst hour 8:00 [1].,1,1,1,1,1,heuristic-rubric
+Q031,image,Al policy ID POL-55946 [1].,1,1,1,1,1,heuristic-rubric
+Q032,image,1 Registration Request [1].,0,0,1,1,0,heuristic-rubric
+Q033,image,Max time error 881 ns [1].,1,1,1,1,1,heuristic-rubric
+Q034,image,3 Report Uploaditimeout 30 min [1].,1,0,1,1,0,heuristic-rubric
+Q035,image,3 Full Regressiontimeout 15 min [1].,1,0,1,1,0,heuristic-rubric
+Q036,image,Pass rate 98.0% [1].,1,1,1,1,1,heuristic-rubric

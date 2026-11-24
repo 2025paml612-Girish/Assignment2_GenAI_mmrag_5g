@@ -1,0 +1,17 @@
+[
+  {
+    "turn": 1,
+    "query": "What eCPRI one-way latency was measured in the fronthaul tests of Site-754?",
+    "expect": "76"
+  },
+  {
+    "turn": 2,
+    "query": "Which VLAN carries its fronthaul traffic in the topology diagram?",
+    "expect": "2754"
+  },
+  {
+    "turn": 3,
+    "query": "And what software build does the O-DU there run?",
+    "expect": "R24.2.8"
+  }
+]

@@ -1,0 +1,51 @@
+# =====================================================================
+#  Metadata ontology for the 5G / O-RAN corpus
+#  Consumed by: ingest/metadata.py (tagging), retrieval/router.py (filters),
+#               prompting/variants.py (placeholders in Jinja2 / CREATE prompts),
+#               guardrails/input_guard.py (domain vocabulary for out-of-scope check)
+# =====================================================================
+version: "1.0"
+domain: "5G NR, O-RAN and telecom test automation"
+
+doc_types:
+  test_report:     {keywords: [test report, test result, verdict, pass, fail, test case]}
+  config_guide:    {keywords: [configuration, parameter, config guide, setting, mo ]}
+  kpi_analysis:    {keywords: [kpi, throughput, latency, success rate, drop rate, analysis]}
+  architecture:    {keywords: [architecture, interface, reference design, deployment]}
+  release_note:    {keywords: [release note, software release, fixed issue, known issue, build]}
+  training_deck:   {keywords: [training, overview, introduction, module, learning]}
+
+topics:
+  ran:             {label: "Radio Access Network", keywords: [gnb, gnodeb, cell, pci, ssb, beam, ran, nr, rru, band, earfcn, arfcn, bandwidth, mimo]}
+  oran:            {label: "O-RAN",                 keywords: [o-ran, oran, o-du, o-ru, o-cu, ric, near-rt, non-rt, xapp, rapp, e2, a1, o1, fronthaul, m-plane, cus-plane]}
+  core:            {label: "5G Core",               keywords: [amf, smf, upf, pdu session, 5gc, core, nssai, slice, registration, ausf, udm]}
+  mobility:        {label: "Mobility",              keywords: [handover, mobility, a3, xn, neighbour, neighbor, reselection, hysteresis, ttt]}
+  transport:       {label: "Transport",             keywords: [transport, ptp, sync, ecpri, backhaul, midhaul, vlan, timing]}
+  testing:         {label: "Test Automation",       keywords: [robot framework, automation, test suite, regression, ci, jenkins, test bed, ue simulator]}
+  security:        {label: "Security",              keywords: [security, tls, ipsec, certificate, authentication, encryption]}
+  performance:     {label: "Performance",           keywords: [throughput, latency, kpi, prb, utilisation, utilization, bler, sinr, rsrp]}
+
+modalities: [text, table, image]
+
+# routing: query cues that indicate which modality holds the answer
+modality_cues:
+  table: [table, row, column, list the, per cell, assigned to, allocated to, measured on, severity, runtime, actual]
+  image: [figure, diagram, chart, graph, plot, image, picture, shown, topology, drawn, illustrated, bar]
+
+sensitivity_levels: [public, internal-sanitised]
+
+# fields every chunk carries (metadata schema)
+chunk_schema:
+  chunk_id: str
+  doc_id: str
+  source: str          # file name
+  doc_type: str        # one of doc_types
+  title: str
+  page: int            # 1-based page / slide number
+  modality: str        # text | table | image
+  topic: str           # one of topics (primary)
+  topics: str          # comma separated secondary topics
+  section: str         # nearest heading
+  date: str            # document date (YYYY-MM-DD) if known
+  sensitivity: str
+  tokens: int

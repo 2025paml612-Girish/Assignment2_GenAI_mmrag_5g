@@ -1,0 +1,30 @@
+# Query: What PCI is assigned to cell C955-2?
+# Route (ontology): {"topics": ["ran"], "doc_type": null, "modality": "table", "entities": ["C955-2"], "domain_hits": 3}
+# Filters: ['entity->1 docs']
+
+You are a 5G NR / O-RAN documentation assistant for RAN test and automation engineers.
+Answer the question precisely and briefly.
+Rules:
+- Use ONLY the numbered context. Cite every fact as [n].
+- Quote numbers with their units exactly as written.
+- The answer is most likely in a table: read the matching row and column.
+- If the context does not contain the answer, reply exactly: "I could not find evidence for this in the indexed documents."
+Query topic(s): Radio Access Network.
+
+Context:
+[1] cell_config_site955.pdf | page 2 | table | 2. Frame and SSB Configuration
+Table 2: Cell parameters for Site-955
+| Cell | Band | ARFCN | PCI | Bandwidth (MHz) | Max Tx Power (dBm) |
+|---|---|---|---|---|---|
+| C955-1 | n78 | 656819 | 411 | 60 | 46 |
+| C955-2 | n78 | 656256 | 53 | 80 | 43 |
+| C955-3 | n78 | 645319 | 584 | 100 | 49 |
+[2] cell_config_site955.pdf | page 2 | text | Table 2: Cell parameters for Site-955
+Results Table 2: Cell parameters for Site-955
+[3] cell_config_site955.pdf | page 1 | text | Introduction
+gNB Cell Configuration Guide - Site-955 Document date: 2026-01-15 Introduction This configuration guide lists the radio parameters for Site-955.
+[4] cell_config_site955.pdf | page 1 | text | 2. Frame and SSB Configuration
+2. Frame and SSB Configuration All cells of Site-955 use an SSB periodicity of 20 ms and the TDD pattern DDDSUDDSUU. All cells were unlocked after the commissioning checklist had been completed.
+
+Question: What PCI is assigned to cell C955-2?
+Answer (1-2 sentences with [n] citations):

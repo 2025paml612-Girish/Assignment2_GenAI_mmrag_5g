@@ -1,0 +1,66 @@
+{
+  "with_memory": [
+    {
+      "turn": 1,
+      "user": "What eCPRI one-way latency was measured in the fronthaul tests of Site-754?",
+      "standalone_query": "What eCPRI one-way latency was measured in the fronthaul tests of Site-754?",
+      "answer": "Measured for FH-754-01 is 76 us [1].",
+      "citations": [
+        "fh_test_site754.pptx p.3 (table)"
+      ],
+      "correct": 1
+    },
+    {
+      "turn": 2,
+      "user": "Which VLAN carries its fronthaul traffic in the topology diagram?",
+      "standalone_query": "Which VLAN carries its fronthaul traffic in the topology diagram (regarding Site-754)?",
+      "answer": "Fronthaul VLAN 2754 NG 25GE [1].",
+      "citations": [
+        "fh_test_site754.pptx p.4 (image)"
+      ],
+      "correct": 1
+    },
+    {
+      "turn": 3,
+      "user": "And what software build does the O-DU there run?",
+      "standalone_query": "And what software build does the O-DU there run (regarding Site-754)?",
+      "answer": "The O-DU at Site-754 runs software build R24.2.8, integrated with O-RU firmware FW-6.7.28 [1].",
+      "citations": [
+        "fh_test_site754.pptx p.2 (text)"
+      ],
+      "correct": 1
+    }
+  ],
+  "without_memory": [
+    {
+      "turn": 1,
+      "user": "What eCPRI one-way latency was measured in the fronthaul tests of Site-754?",
+      "standalone_query": "What eCPRI one-way latency was measured in the fronthaul tests of Site-754?",
+      "answer": "Measured for FH-754-01 is 76 us [1].",
+      "citations": [
+        "fh_test_site754.pptx p.3 (table)"
+      ],
+      "correct": 1
+    },
+    {
+      "turn": 2,
+      "user": "Which VLAN carries its fronthaul traffic in the topology diagram?",
+      "standalone_query": "Which VLAN carries its fronthaul traffic in the topology diagram?",
+      "answer": "Fronthaul VLAN 2106 NG 25GE [1].",
+      "citations": [
+        "fh_test_site106.pptx p.4 (image)"
+      ],
+      "correct": 0
+    },
+    {
+      "turn": 3,
+      "user": "And what software build does the O-DU there run?",
+      "standalone_query": "And what software build does the O-DU there run?",
+      "answer": "O-DU Software Release Note - Build R25.3.473 Document date: 2025-02-27 Introduction This release note describes software build R25.3.473 for the O-DU [2].",
+      "citations": [
+        "release_note_473.pdf p.1 (text)"
+      ],
+      "correct": 0
+    }
+  ]
+}

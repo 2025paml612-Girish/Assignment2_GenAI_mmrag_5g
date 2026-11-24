@@ -1,0 +1,7 @@
+config,embedding,chunking,retrieval,chunks,avg_chunk_tokens,build_s,recall@1,recall@3,recall@5,mrr,recall@5_image,recall@5_table,recall@5_text
+A,st:BAAI/bge-small-en-v1.5,recursive,dense,850,52.4,39.52,0.7778,0.9444,0.9722,0.8634,1.0,1.0,0.9167
+A,st:BAAI/bge-small-en-v1.5,recursive,hybrid+filters,850,52.4,56.64,0.9444,1.0,1.0,0.9722,1.0,1.0,1.0
+B,st:BAAI/bge-small-en-v1.5,page,dense,769,58.7,107.16,0.8611,0.9722,0.9722,0.912,1.0,0.9167,1.0
+B,st:BAAI/bge-small-en-v1.5,page,hybrid+filters,769,58.7,111.62,0.9722,1.0,1.0,0.9861,1.0,1.0,1.0
+C,st:sentence-transformers/all-MiniLM-L6-v2,recursive,dense,850,52.4,32.38,0.7778,0.9167,0.9444,0.8435,0.9167,1.0,0.9167
+C,st:sentence-transformers/all-MiniLM-L6-v2,recursive,hybrid+filters,850,52.4,36.94,0.9444,1.0,1.0,0.9722,1.0,1.0,1.0

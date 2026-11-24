@@ -1,0 +1,47 @@
+[
+  {
+    "modality": "text",
+    "question": "What time-to-trigger value was used after the A3 tuning in Cluster-400?",
+    "answer": "Parameter Change The A3 offset for Cluster-400 was tuned from 5 dB to 3 dB with a time-to-trigger of 256 ms [1].",
+    "citations": [
+      {
+        "n": 1,
+        "chunk_id": "ho_kpi_cluster400-p1-x1",
+        "source": "ho_kpi_cluster400.pdf",
+        "page": 1,
+        "modality": "text"
+      }
+    ],
+    "gold_source": "ho_kpi_cluster400.pdf p.1"
+  },
+  {
+    "modality": "table",
+    "question": "What PCI is assigned to cell C955-2?",
+    "answer": "PCI for C955-2 is 53 [1].",
+    "citations": [
+      {
+        "n": 1,
+        "chunk_id": "cell_config_site955-p2-t0",
+        "source": "cell_config_site955.pdf",
+        "page": 2,
+        "modality": "table"
+      }
+    ],
+    "gold_source": "cell_config_site955.pdf p.2"
+  },
+  {
+    "modality": "image",
+    "question": "What regression pass rate is shown in the figure for build R22.7.847?",
+    "answer": "Pass rate 98.7% [1].",
+    "citations": [
+      {
+        "n": 1,
+        "chunk_id": "release_note_847-p3-i0",
+        "source": "release_note_847.pdf",
+        "page": 3,
+        "modality": "image"
+      }
+    ],
+    "gold_source": "release_note_847.pdf p.3"
+  }
+]

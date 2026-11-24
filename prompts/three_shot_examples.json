@@ -1,0 +1,11 @@
+[
+  {"context": "[1] example_cfg.pdf | page 2 | table | Cell parameters\n| Cell | Band | PCI |\n|---|---|---|\n| C900-1 | n78 | 233 |\n| C900-2 | n78 | 87 |",
+   "question": "What PCI is assigned to cell C900-2?",
+   "answer": "PCI for C900-2 is 87 [1]."},
+  {"context": "[1] example_fh.pdf | page 3 | image | Figure 1\n[Figure] Figure 1: Topology of Site-900\nText in image: O-RU-900A O-DU-900 | Fronthaul VLAN 2900",
+   "question": "Which VLAN carries the fronthaul in the Site-900 topology figure?",
+   "answer": "The fronthaul uses VLAN 2900 [1]."},
+  {"context": "[1] example_core.pdf | page 1 | text | Test configuration\nThe UPF in Lab-900 was configured with an N3 MTU of 1450 bytes.",
+   "question": "Which slice/service type was used in Lab-900?",
+   "answer": "I could not find evidence for this in the indexed documents."}
+]

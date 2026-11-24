@@ -1,0 +1,68 @@
+{
+  "latency": {
+    "n_queries": 36,
+    "p50_s": 0.0051,
+    "p95_s": 0.0059,
+    "max_s": 0.0071,
+    "fr3_p95_under_90s": true
+  },
+  "consistency": {
+    "queries": 36,
+    "runs_per_query": 5,
+    "identical_retrieval_share": 1.0,
+    "identical_answer_share": 1.0
+  },
+  "guardrail_overhead": {
+    "mean_guard_time_ms": 0.0692,
+    "p95_guard_time_ms": 0.0858,
+    "mean_latency_with_s": 0.0054,
+    "mean_latency_without_s": 0.0053,
+    "fr4_under_6s": true
+  },
+  "dos": {
+    "burst_requests": 40,
+    "rate_limit_rpm": 30,
+    "blocked_by_rate_limit": 10,
+    "oversized_blocked": true,
+    "oversized_reject_ms": 0.008
+  },
+  "tokens": [
+    {
+      "design": "naive: whole pages + raw images (zero-shot)",
+      "avg_input_tokens": 1089.3333,
+      "avg_output_tokens": 19.0,
+      "answer_accuracy": 0.8611,
+      "faithfulness": 1.0,
+      "latency_p50_s": 0.0054,
+      "token_reduction_vs_naive": "0.0%"
+    },
+    {
+      "design": "chunks, no compression (jinja2)",
+      "avg_input_tokens": 433.9444,
+      "avg_output_tokens": 19.0,
+      "answer_accuracy": 0.8611,
+      "faithfulness": 1.0,
+      "latency_p50_s": 0.0051,
+      "token_reduction_vs_naive": "60.2%"
+    },
+    {
+      "design": "final: top-k compressed chunks + OCR text (jinja2)",
+      "avg_input_tokens": 383.0556,
+      "avg_output_tokens": 19.0,
+      "answer_accuracy": 0.8611,
+      "faithfulness": 1.0,
+      "latency_p50_s": 0.0051,
+      "token_reduction_vs_naive": "64.8%"
+    },
+    {
+      "design": "repeated query served from answer cache",
+      "avg_input_tokens": 0.0,
+      "avg_output_tokens": 0.0,
+      "answer_accuracy": NaN,
+      "faithfulness": NaN,
+      "latency_p50_s": 0.0018011529998602782,
+      "token_reduction_vs_naive": "100.0%"
+    }
+  ],
+  "tokenizer": "regex-approx"
+}

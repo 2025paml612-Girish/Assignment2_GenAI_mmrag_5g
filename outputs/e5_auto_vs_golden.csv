@@ -1,0 +1,4 @@
+method,n,recall@5,mrr,answer_accuracy,faithfulness
+Golden set (hand labels),36,1.0,0.8843,0.8611,1.0
+Synthetic QG (template),30,1.0,0.8944,0.8667,1.0
+Reference-free judge (heuristic-rubric) on golden questions,36,,,0.7778,

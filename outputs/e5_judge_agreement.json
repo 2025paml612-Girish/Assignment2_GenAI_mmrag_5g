@@ -1,0 +1,11 @@
+{
+  "n": 36,
+  "agreement": 0.8611,
+  "cohen_kappa": 0.5361,
+  "tp_both_correct": 27,
+  "tn_both_wrong": 4,
+  "judge_false_pass": 1,
+  "judge_false_fail": 4,
+  "golden_accuracy": 0.8611,
+  "judge_pass_rate": 0.7778
+}

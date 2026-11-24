@@ -1,0 +1,121 @@
+doc_id,file,type,bytes,status,error,ocr_engine,layout,pages,text_blocks,tables,images,images_ocr_chars,images_skipped,title,date,parse_seconds,doc_type,charts,chunks
+cell_config_site146,cell_config_site146.pdf,pdf,36326,ok,,rapidocr,heuristic,4,12,1,1,82,0,gNB Cell Configuration Guide - Site-146,2026-03-30,22.421,config_guide,,7
+cell_config_site214,cell_config_site214.pdf,pdf,36797,ok,,rapidocr,heuristic,4,12,1,1,82,0,gNB Cell Configuration Guide - Site-214,2026-06-11,3.734,config_guide,,7
+cell_config_site323,cell_config_site323.pdf,pdf,36976,ok,,rapidocr,heuristic,4,12,1,1,82,0,gNB Cell Configuration Guide - Site-323,2025-09-28,3.951,config_guide,,7
+cell_config_site324,cell_config_site324.pdf,pdf,36875,ok,,rapidocr,heuristic,4,12,1,1,82,0,gNB Cell Configuration Guide - Site-324,2025-10-12,3.637,config_guide,,7
+cell_config_site370,cell_config_site370.pdf,pdf,37095,ok,,rapidocr,heuristic,4,12,1,1,82,0,gNB Cell Configuration Guide - Site-370,2025-10-11,3.988,config_guide,,7
+cell_config_site373,cell_config_site373.pdf,pdf,36282,ok,,rapidocr,heuristic,4,12,1,1,82,0,gNB Cell Configuration Guide - Site-373,2025-07-15,2.803,config_guide,,7
+cell_config_site374,cell_config_site374.pdf,pdf,36398,ok,,rapidocr,heuristic,4,12,1,1,82,0,gNB Cell Configuration Guide - Site-374,2026-03-21,3.781,config_guide,,7
+cell_config_site665,cell_config_site665.pptx,pptx,69876,ok,,rapidocr,heuristic,5,4,1,1,82,0,gNB Cell Configuration Guide - Site-665,2025-05-20,2.237,config_guide,0.0,7
+cell_config_site792,cell_config_site792.pdf,pdf,36133,ok,,rapidocr,heuristic,4,12,1,1,82,0,gNB Cell Configuration Guide - Site-792,2025-06-16,3.242,config_guide,,7
+cell_config_site818,cell_config_site818.pptx,pptx,69570,ok,,rapidocr,heuristic,5,4,1,1,83,0,gNB Cell Configuration Guide - Site-818,2025-11-25,1.526,config_guide,0.0,7
+cell_config_site846,cell_config_site846.pptx,pptx,70628,ok,,rapidocr,heuristic,5,4,1,1,82,0,gNB Cell Configuration Guide - Site-846,2026-08-04,1.37,config_guide,0.0,7
+cell_config_site877,cell_config_site877.pdf,pdf,36548,ok,,rapidocr,heuristic,4,12,1,1,82,0,gNB Cell Configuration Guide - Site-877,2026-06-10,3.787,config_guide,,7
+cell_config_site881,cell_config_site881.pdf,pdf,36906,ok,,rapidocr,heuristic,4,12,1,1,82,0,gNB Cell Configuration Guide - Site-881,2025-03-11,3.478,config_guide,,7
+cell_config_site955,cell_config_site955.pdf,pdf,36315,ok,,rapidocr,heuristic,4,12,1,1,82,0,gNB Cell Configuration Guide - Site-955,2026-01-15,3.163,config_guide,,7
+core_pdu_lab144,core_pdu_lab144.pdf,pdf,30970,ok,,rapidocr,heuristic,4,12,1,1,87,0,5G Core PDU Session Test Report - Lab-144,2026-08-18,4.119,test_report,,7
+core_pdu_lab263,core_pdu_lab263.pdf,pdf,30649,ok,,rapidocr,heuristic,4,12,1,1,86,0,5G Core PDU Session Test Report - Lab-263,2026-06-28,4.082,test_report,,7
+core_pdu_lab267,core_pdu_lab267.pdf,pdf,30988,ok,,rapidocr,heuristic,4,12,1,1,86,0,5G Core PDU Session Test Report - Lab-267,2026-07-06,3.496,test_report,,7
+core_pdu_lab333,core_pdu_lab333.pdf,pdf,30936,ok,,rapidocr,heuristic,4,12,1,1,86,0,5G Core PDU Session Test Report - Lab-333,2025-12-27,3.587,test_report,,7
+core_pdu_lab432,core_pdu_lab432.pdf,pdf,30658,ok,,rapidocr,heuristic,4,12,1,1,86,0,5G Core PDU Session Test Report - Lab-432,2026-08-01,3.8,test_report,,7
+core_pdu_lab529,core_pdu_lab529.pdf,pdf,30996,ok,,rapidocr,heuristic,4,12,1,1,86,0,5G Core PDU Session Test Report - Lab-529,2025-03-01,3.722,test_report,,7
+core_pdu_lab617,core_pdu_lab617.pdf,pdf,30921,ok,,rapidocr,heuristic,4,12,1,1,86,0,5G Core PDU Session Test Report - Lab-617,2026-03-28,3.721,test_report,,7
+core_pdu_lab658,core_pdu_lab658.pptx,pptx,60383,ok,,rapidocr,heuristic,5,4,1,1,86,0,5G Core PDU Session Test Report - Lab-658,2025-02-11,1.9,test_report,0.0,7
+core_pdu_lab743,core_pdu_lab743.pdf,pdf,30639,ok,,rapidocr,heuristic,4,12,1,1,86,0,5G Core PDU Session Test Report - Lab-743,2026-04-11,3.828,test_report,,7
+core_pdu_lab750,core_pdu_lab750.pptx,pptx,60704,ok,,rapidocr,heuristic,5,4,1,1,87,0,5G Core PDU Session Test Report - Lab-750,2026-06-11,1.894,test_report,0.0,7
+core_pdu_lab799,core_pdu_lab799.pdf,pdf,30914,ok,,rapidocr,heuristic,4,12,1,1,87,0,5G Core PDU Session Test Report - Lab-799,2025-06-11,3.869,test_report,,7
+core_pdu_lab859,core_pdu_lab859.pdf,pdf,30952,ok,,rapidocr,heuristic,4,12,1,1,87,0,5G Core PDU Session Test Report - Lab-859,2026-08-09,3.573,test_report,,7
+core_pdu_lab989,core_pdu_lab989.pptx,pptx,60384,ok,,rapidocr,heuristic,5,4,1,1,86,0,5G Core PDU Session Test Report - Lab-989,2025-05-14,2.021,test_report,0.0,7
+fh_test_site106,fh_test_site106.pptx,pptx,60748,ok,,rapidocr,heuristic,5,4,1,1,90,0,O-RAN Fronthaul Interoperability Test Report - Site-106,2025-04-11,2.254,test_report,0.0,7
+fh_test_site171,fh_test_site171.pptx,pptx,58046,ok,,rapidocr,heuristic,5,4,1,1,90,0,O-RAN Fronthaul Interoperability Test Report - Site-171,2025-06-25,1.853,test_report,0.0,7
+fh_test_site180,fh_test_site180.pdf,pdf,29064,ok,,rapidocr,heuristic,4,13,1,1,89,0,O-RAN Fronthaul Interoperability Test Report - Site-180,2025-01-24,3.805,test_report,,8
+fh_test_site195,fh_test_site195.pdf,pdf,28744,ok,,rapidocr,heuristic,4,13,1,1,90,0,O-RAN Fronthaul Interoperability Test Report - Site-195,2025-02-26,3.4,test_report,,8
+fh_test_site204,fh_test_site204.pdf,pdf,28266,ok,,rapidocr,heuristic,4,13,1,1,89,0,O-RAN Fronthaul Interoperability Test Report - Site-204,2025-05-20,3.949,test_report,,8
+fh_test_site320,fh_test_site320.pdf,pdf,29009,ok,,rapidocr,heuristic,4,13,1,1,89,0,O-RAN Fronthaul Interoperability Test Report - Site-320,2025-04-08,4.105,test_report,,8
+fh_test_site510,fh_test_site510.pdf,pdf,27879,ok,,rapidocr,heuristic,4,13,1,1,88,0,O-RAN Fronthaul Interoperability Test Report - Site-510,2026-06-18,4.056,test_report,,8
+fh_test_site646,fh_test_site646.pdf,pdf,28420,ok,,rapidocr,heuristic,4,13,1,1,91,0,O-RAN Fronthaul Interoperability Test Report - Site-646,2025-02-23,3.535,test_report,,8
+fh_test_site670,fh_test_site670.pptx,pptx,61615,ok,,rapidocr,heuristic,5,4,1,1,90,0,O-RAN Fronthaul Interoperability Test Report - Site-670,2025-11-08,2.073,test_report,0.0,7
+fh_test_site718,fh_test_site718.pdf,pdf,28625,ok,,rapidocr,heuristic,4,13,1,1,89,0,O-RAN Fronthaul Interoperability Test Report - Site-718,2025-03-18,4.275,test_report,,8
+fh_test_site754,fh_test_site754.pptx,pptx,60931,ok,,rapidocr,heuristic,5,4,1,1,87,0,O-RAN Fronthaul Interoperability Test Report - Site-754,2025-08-10,2.331,test_report,0.0,7
+fh_test_site765,fh_test_site765.pdf,pdf,29239,ok,,rapidocr,heuristic,4,13,1,1,89,0,O-RAN Fronthaul Interoperability Test Report - Site-765,2026-02-24,4.036,test_report,,8
+fh_test_site786,fh_test_site786.pdf,pdf,30196,ok,,rapidocr,heuristic,4,13,1,1,89,0,O-RAN Fronthaul Interoperability Test Report - Site-786,2026-08-10,3.44,test_report,,8
+fh_test_site948,fh_test_site948.pdf,pdf,29776,ok,,rapidocr,heuristic,4,13,1,1,90,0,O-RAN Fronthaul Interoperability Test Report - Site-948,2026-06-07,3.875,test_report,,8
+ho_kpi_cluster125,ho_kpi_cluster125.pdf,pdf,62662,ok,,rapidocr,heuristic,4,12,1,1,75,0,Handover KPI Analysis - Cluster-125,2025-04-30,4.23,kpi_analysis,,7
+ho_kpi_cluster167,ho_kpi_cluster167.pdf,pdf,60925,ok,,rapidocr,heuristic,4,12,1,1,79,0,Handover KPI Analysis - Cluster-167,2026-02-11,4.463,kpi_analysis,,7
+ho_kpi_cluster338,ho_kpi_cluster338.pptx,pptx,95176,ok,,rapidocr,heuristic,5,4,1,1,75,0,Handover KPI Analysis - Cluster-338,2025-06-11,2.771,kpi_analysis,0.0,7
+ho_kpi_cluster400,ho_kpi_cluster400.pdf,pdf,61035,ok,,rapidocr,heuristic,4,12,1,1,76,0,Handover KPI Analysis - Cluster-400,2025-11-18,4.344,kpi_analysis,,7
+ho_kpi_cluster444,ho_kpi_cluster444.pdf,pdf,69109,ok,,rapidocr,heuristic,4,12,1,1,75,0,Handover KPI Analysis - Cluster-444,2026-03-06,24.29,kpi_analysis,,7
+ho_kpi_cluster564,ho_kpi_cluster564.pdf,pdf,65716,ok,,rapidocr,heuristic,4,12,1,1,75,0,Handover KPI Analysis - Cluster-564,2026-02-13,19.748,kpi_analysis,,7
+ho_kpi_cluster777,ho_kpi_cluster777.pdf,pdf,76217,ok,,rapidocr,heuristic,4,12,1,1,75,0,Handover KPI Analysis - Cluster-777,2026-02-17,4.529,kpi_analysis,,7
+ho_kpi_cluster801,ho_kpi_cluster801.pdf,pdf,69334,ok,,rapidocr,heuristic,4,12,1,1,74,0,Handover KPI Analysis - Cluster-801,2026-02-08,4.23,kpi_analysis,,7
+ho_kpi_cluster858,ho_kpi_cluster858.pdf,pdf,69567,ok,,rapidocr,heuristic,4,12,1,1,78,0,Handover KPI Analysis - Cluster-858,2025-08-09,48.357,kpi_analysis,,7
+ho_kpi_cluster925,ho_kpi_cluster925.pdf,pdf,66925,ok,,rapidocr,heuristic,4,12,1,1,74,0,Handover KPI Analysis - Cluster-925,2026-07-25,27.704,kpi_analysis,,7
+ho_kpi_cluster926,ho_kpi_cluster926.pptx,pptx,89291,ok,,rapidocr,heuristic,5,4,1,1,78,0,Handover KPI Analysis - Cluster-926,2026-02-14,2.546,kpi_analysis,0.0,7
+ho_kpi_cluster970,ho_kpi_cluster970.pptx,pptx,91908,ok,,rapidocr,heuristic,5,4,1,1,74,0,Handover KPI Analysis - Cluster-970,2025-01-12,1.556,kpi_analysis,0.0,7
+ho_kpi_cluster986,ho_kpi_cluster986.pdf,pdf,70955,ok,,rapidocr,heuristic,4,12,1,1,78,0,Handover KPI Analysis - Cluster-986,2026-07-06,4.354,kpi_analysis,,7
+ho_kpi_cluster993,ho_kpi_cluster993.pdf,pdf,62989,ok,,rapidocr,heuristic,4,12,1,1,75,0,Handover KPI Analysis - Cluster-993,2025-02-15,3.596,kpi_analysis,,7
+ptp_sync_site181,ptp_sync_site181.pdf,pdf,65805,ok,,rapidocr,heuristic,4,13,1,1,69,0,Transport and PTP Synchronisation Validation - Site-181,2025-02-04,12.131,test_report,,7
+ptp_sync_site199,ptp_sync_site199.pdf,pdf,72724,ok,,rapidocr,heuristic,4,13,1,1,66,0,Transport and PTP Synchronisation Validation - Site-199,2026-03-05,57.498,test_report,,7
+ptp_sync_site328,ptp_sync_site328.pdf,pdf,64466,ok,,rapidocr,heuristic,4,13,1,1,69,0,Transport and PTP Synchronisation Validation - Site-328,2025-09-18,51.143,test_report,,7
+ptp_sync_site334,ptp_sync_site334.pdf,pdf,66689,ok,,rapidocr,heuristic,4,13,1,1,69,0,Transport and PTP Synchronisation Validation - Site-334,2026-03-15,37.343,test_report,,7
+ptp_sync_site376,ptp_sync_site376.pdf,pdf,55581,ok,,rapidocr,heuristic,4,13,1,1,69,0,Transport and PTP Synchronisation Validation - Site-376,2026-07-08,49.26,test_report,,7
+ptp_sync_site448,ptp_sync_site448.pdf,pdf,64144,ok,,rapidocr,heuristic,4,13,1,1,69,0,Transport and PTP Synchronisation Validation - Site-448,2025-07-28,41.662,test_report,,7
+ptp_sync_site479,ptp_sync_site479.pdf,pdf,60282,ok,,rapidocr,heuristic,4,13,1,1,69,0,Transport and PTP Synchronisation Validation - Site-479,2025-02-18,27.969,test_report,,7
+ptp_sync_site532,ptp_sync_site532.pdf,pdf,62258,ok,,rapidocr,heuristic,4,13,1,1,69,0,Transport and PTP Synchronisation Validation - Site-532,2025-12-10,3.704,test_report,,7
+ptp_sync_site649,ptp_sync_site649.pptx,pptx,94553,ok,,rapidocr,heuristic,5,4,1,1,69,0,Transport and PTP Synchronisation Validation - Site-649,2026-06-09,2.135,test_report,0.0,7
+ptp_sync_site674,ptp_sync_site674.pptx,pptx,89006,ok,,rapidocr,heuristic,5,4,1,1,71,0,Transport and PTP Synchronisation Validation - Site-674,2025-12-27,1.742,test_report,0.0,7
+ptp_sync_site691,ptp_sync_site691.pdf,pdf,69549,ok,,rapidocr,heuristic,4,13,1,1,69,0,Transport and PTP Synchronisation Validation - Site-691,2026-01-06,4.645,test_report,,7
+ptp_sync_site703,ptp_sync_site703.pdf,pdf,68485,ok,,rapidocr,heuristic,4,13,1,1,69,0,Transport and PTP Synchronisation Validation - Site-703,2026-03-24,4.015,test_report,,7
+ptp_sync_site723,ptp_sync_site723.pptx,pptx,88748,ok,,rapidocr,heuristic,5,4,1,1,69,0,Transport and PTP Synchronisation Validation - Site-723,2025-05-07,2.335,test_report,0.0,7
+release_note_189,release_note_189.pdf,pdf,27775,ok,,rapidocr,heuristic,4,12,1,1,52,0,O-DU Software Release Note - Build R25.9.189,2026-01-03,4.75,release_note,,7
+release_note_194,release_note_194.pdf,pdf,27150,ok,,rapidocr,heuristic,4,12,1,1,52,0,O-DU Software Release Note - Build R24.4.194,2026-07-13,4.092,release_note,,7
+release_note_325,release_note_325.pdf,pdf,27505,ok,,rapidocr,heuristic,4,12,1,1,52,0,O-DU Software Release Note - Build R24.5.325,2026-04-04,4.08,release_note,,7
+release_note_381,release_note_381.pptx,pptx,50580,ok,,rapidocr,heuristic,5,4,1,1,52,0,O-DU Software Release Note - Build R23.1.381,2025-08-10,1.856,release_note,0.0,7
+release_note_473,release_note_473.pdf,pdf,28203,ok,,rapidocr,heuristic,4,12,1,1,52,0,O-DU Software Release Note - Build R25.3.473,2025-02-27,4.059,release_note,,7
+release_note_573,release_note_573.pdf,pdf,27139,ok,,rapidocr,heuristic,4,12,1,1,52,0,O-DU Software Release Note - Build R23.3.573,2025-02-21,4.012,release_note,,7
+release_note_716,release_note_716.pdf,pdf,28030,ok,,rapidocr,heuristic,4,12,1,1,52,0,O-DU Software Release Note - Build R25.6.716,2025-04-01,3.73,release_note,,7
+release_note_733,release_note_733.pdf,pdf,26957,ok,,rapidocr,heuristic,4,12,1,1,52,0,O-DU Software Release Note - Build R23.3.733,2026-01-24,3.763,release_note,,7
+release_note_763,release_note_763.pdf,pdf,27934,ok,,rapidocr,heuristic,4,12,1,1,52,0,O-DU Software Release Note - Build R25.3.763,2026-06-28,3.913,release_note,,7
+release_note_814,release_note_814.pptx,pptx,51079,ok,,rapidocr,heuristic,5,4,1,1,52,0,O-DU Software Release Note - Build R25.4.814,2025-12-08,1.916,release_note,0.0,7
+release_note_847,release_note_847.pdf,pdf,28572,ok,,rapidocr,heuristic,4,12,1,1,52,0,O-DU Software Release Note - Build R22.7.847,2026-03-29,3.654,release_note,,7
+release_note_886,release_note_886.pptx,pptx,51099,ok,,rapidocr,heuristic,5,4,1,1,52,0,O-DU Software Release Note - Build R25.6.886,2025-11-08,2.382,release_note,0.0,7
+release_note_891,release_note_891.pptx,pptx,51381,ok,,rapidocr,heuristic,5,4,1,1,52,0,O-DU Software Release Note - Build R25.1.891,2025-09-05,2.177,release_note,0.0,7
+rf_training_module132,rf_training_module132.pptx,pptx,58538,ok,,rapidocr,heuristic,5,4,1,1,85,0,Robot Framework 5G Test Automation Training - Module 132,2025-11-10,1.502,training_deck,0.0,7
+rf_training_module227,rf_training_module227.pptx,pptx,58556,ok,,rapidocr,heuristic,5,4,1,1,85,0,Robot Framework 5G Test Automation Training - Module 227,2025-02-15,1.567,training_deck,0.0,7
+rf_training_module242,rf_training_module242.pptx,pptx,58803,ok,,rapidocr,heuristic,5,4,1,1,88,0,Robot Framework 5G Test Automation Training - Module 242,2025-10-04,1.973,training_deck,0.0,7
+rf_training_module296,rf_training_module296.pptx,pptx,58805,ok,,rapidocr,heuristic,5,4,1,1,88,0,Robot Framework 5G Test Automation Training - Module 296,2026-04-19,1.491,training_deck,0.0,7
+rf_training_module303,rf_training_module303.pptx,pptx,58811,ok,,rapidocr,heuristic,5,4,1,1,88,0,Robot Framework 5G Test Automation Training - Module 303,2025-10-09,1.477,training_deck,0.0,7
+rf_training_module384,rf_training_module384.pptx,pptx,58975,ok,,rapidocr,heuristic,5,4,1,1,88,0,Robot Framework 5G Test Automation Training - Module 384,2025-04-09,1.874,training_deck,0.0,7
+rf_training_module463,rf_training_module463.pptx,pptx,59061,ok,,rapidocr,heuristic,5,4,1,1,87,0,Robot Framework 5G Test Automation Training - Module 463,2025-09-08,1.773,training_deck,0.0,7
+rf_training_module467,rf_training_module467.pptx,pptx,58972,ok,,rapidocr,heuristic,5,4,1,1,88,0,Robot Framework 5G Test Automation Training - Module 467,2026-01-22,1.312,training_deck,0.0,7
+rf_training_module755,rf_training_module755.pptx,pptx,58401,ok,,rapidocr,heuristic,5,4,1,1,85,0,Robot Framework 5G Test Automation Training - Module 755,2026-02-25,1.632,training_deck,0.0,7
+rf_training_module914,rf_training_module914.pptx,pptx,58762,ok,,rapidocr,heuristic,5,4,1,1,85,0,Robot Framework 5G Test Automation Training - Module 914,2025-10-15,1.321,training_deck,0.0,7
+rf_training_module964,rf_training_module964.pptx,pptx,58546,ok,,rapidocr,heuristic,5,4,1,1,85,0,Robot Framework 5G Test Automation Training - Module 964,2025-10-26,1.631,training_deck,0.0,7
+rf_training_module978,rf_training_module978.pptx,pptx,58553,ok,,rapidocr,heuristic,5,4,1,1,85,0,Robot Framework 5G Test Automation Training - Module 978,2025-06-16,1.699,training_deck,0.0,7
+rf_training_module982,rf_training_module982.pptx,pptx,58968,ok,,rapidocr,heuristic,5,4,1,1,87,0,Robot Framework 5G Test Automation Training - Module 982,2025-02-20,1.689,training_deck,0.0,7
+ric_arch_region127,ric_arch_region127.pdf,pdf,25052,ok,,rapidocr,heuristic,4,13,1,1,71,0,Near-RT RIC xApp Deployment Architecture - Region-127,2025-02-06,4.136,architecture,,7
+ric_arch_region157,ric_arch_region157.pdf,pdf,25085,ok,,rapidocr,heuristic,4,13,1,1,71,0,Near-RT RIC xApp Deployment Architecture - Region-157,2025-11-09,3.872,architecture,,7
+ric_arch_region173,ric_arch_region173.pdf,pdf,26063,ok,,rapidocr,heuristic,4,13,1,1,71,0,Near-RT RIC xApp Deployment Architecture - Region-173,2026-04-15,3.884,architecture,,7
+ric_arch_region266,ric_arch_region266.pdf,pdf,25429,ok,,rapidocr,heuristic,4,13,1,1,71,0,Near-RT RIC xApp Deployment Architecture - Region-266,2026-08-03,4.266,architecture,,7
+ric_arch_region350,ric_arch_region350.pdf,pdf,25794,ok,,rapidocr,heuristic,4,13,1,1,72,0,Near-RT RIC xApp Deployment Architecture - Region-350,2025-12-10,3.981,architecture,,7
+ric_arch_region396,ric_arch_region396.pdf,pdf,25967,ok,,rapidocr,heuristic,4,13,1,1,71,0,Near-RT RIC xApp Deployment Architecture - Region-396,2026-04-28,3.574,architecture,,7
+ric_arch_region470,ric_arch_region470.pptx,pptx,57898,ok,,rapidocr,heuristic,5,4,1,1,71,0,Near-RT RIC xApp Deployment Architecture - Region-470,2025-04-29,1.823,architecture,0.0,7
+ric_arch_region488,ric_arch_region488.pptx,pptx,57813,ok,,rapidocr,heuristic,5,4,1,1,71,0,Near-RT RIC xApp Deployment Architecture - Region-488,2026-04-22,1.688,architecture,0.0,7
+ric_arch_region489,ric_arch_region489.pdf,pdf,25967,ok,,rapidocr,heuristic,4,13,1,1,71,0,Near-RT RIC xApp Deployment Architecture - Region-489,2025-02-19,3.805,architecture,,7
+ric_arch_region559,ric_arch_region559.pptx,pptx,58066,ok,,rapidocr,heuristic,5,4,1,1,71,0,Near-RT RIC xApp Deployment Architecture - Region-559,2025-10-31,1.782,architecture,0.0,7
+ric_arch_region570,ric_arch_region570.pdf,pdf,25946,ok,,rapidocr,heuristic,4,13,1,1,71,0,Near-RT RIC xApp Deployment Architecture - Region-570,2025-06-04,4.123,architecture,,7
+ric_arch_region704,ric_arch_region704.pdf,pdf,25860,ok,,rapidocr,heuristic,4,13,1,1,71,0,Near-RT RIC xApp Deployment Architecture - Region-704,2025-01-30,4.095,architecture,,7
+ric_arch_region983,ric_arch_region983.pdf,pdf,25952,ok,,rapidocr,heuristic,4,13,1,1,71,0,Near-RT RIC xApp Deployment Architecture - Region-983,2026-01-24,4.059,architecture,,7
+weekly_kpi_w130_south,weekly_kpi_w130_south.pptx,pptx,43434,ok,,rapidocr,heuristic,5,4,1,1,0,0,Weekly RAN KPI Review - Week 130 South Region,2025-08-24,0.032,kpi_analysis,1.0,7
+weekly_kpi_w203_south,weekly_kpi_w203_south.pptx,pptx,43453,ok,,rapidocr,heuristic,5,4,1,1,0,0,Weekly RAN KPI Review - Week 203 South Region,2025-09-16,0.025,kpi_analysis,1.0,7
+weekly_kpi_w259_south,weekly_kpi_w259_south.pptx,pptx,43444,ok,,rapidocr,heuristic,5,4,1,1,0,0,Weekly RAN KPI Review - Week 259 South Region,2025-07-04,0.032,kpi_analysis,1.0,7
+weekly_kpi_w275_central,weekly_kpi_w275_central.pptx,pptx,43446,ok,,rapidocr,heuristic,5,4,1,1,0,0,Weekly RAN KPI Review - Week 275 Central Region,2025-05-29,0.032,kpi_analysis,1.0,7
+weekly_kpi_w314_north,weekly_kpi_w314_north.pptx,pptx,43446,ok,,rapidocr,heuristic,5,4,1,1,0,0,Weekly RAN KPI Review - Week 314 North Region,2025-03-07,0.049,kpi_analysis,1.0,7
+weekly_kpi_w423_north,weekly_kpi_w423_north.pptx,pptx,43441,ok,,rapidocr,heuristic,5,4,1,1,0,0,Weekly RAN KPI Review - Week 423 North Region,2026-03-07,0.045,kpi_analysis,1.0,7
+weekly_kpi_w452_east,weekly_kpi_w452_east.pptx,pptx,43436,ok,,rapidocr,heuristic,5,4,1,1,0,0,Weekly RAN KPI Review - Week 452 East Region,2025-04-26,0.05,kpi_analysis,1.0,7
+weekly_kpi_w487_north,weekly_kpi_w487_north.pptx,pptx,43457,ok,,rapidocr,heuristic,5,4,1,1,0,0,Weekly RAN KPI Review - Week 487 North Region,2025-12-13,0.041,kpi_analysis,1.0,7
+weekly_kpi_w804_north,weekly_kpi_w804_north.pptx,pptx,43438,ok,,rapidocr,heuristic,5,4,1,1,0,0,Weekly RAN KPI Review - Week 804 North Region,2026-06-30,0.038,kpi_analysis,1.0,7
+weekly_kpi_w821_west,weekly_kpi_w821_west.pptx,pptx,43439,ok,,rapidocr,heuristic,5,4,1,1,0,0,Weekly RAN KPI Review - Week 821 West Region,2026-02-19,0.051,kpi_analysis,1.0,7
+weekly_kpi_w833_east,weekly_kpi_w833_east.pptx,pptx,43426,ok,,rapidocr,heuristic,5,4,1,1,0,0,Weekly RAN KPI Review - Week 833 East Region,2026-01-04,0.051,kpi_analysis,1.0,7
+weekly_kpi_w854_central,weekly_kpi_w854_central.pptx,pptx,43460,ok,,rapidocr,heuristic,5,4,1,1,0,0,Weekly RAN KPI Review - Week 854 Central Region,2025-03-05,0.035,kpi_analysis,1.0,7
+weekly_kpi_w928_north,weekly_kpi_w928_north.pptx,pptx,43448,ok,,rapidocr,heuristic,5,4,1,1,0,0,Weekly RAN KPI Review - Week 928 North Region,2026-03-05,0.026,kpi_analysis,1.0,7

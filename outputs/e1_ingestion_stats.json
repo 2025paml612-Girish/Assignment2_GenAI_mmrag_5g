@@ -1,0 +1,40 @@
+{
+  "documents_total": 120,
+  "documents_parsed": 120,
+  "documents_failed": 0,
+  "pdf": 71,
+  "pptx_ppt": 49,
+  "pages_or_slides": 529,
+  "text_blocks": 1078,
+  "tables": 120,
+  "images": 120,
+  "images_skipped_small_or_repeated": 0,
+  "ocr_characters": 8202,
+  "docs_with_tables": 120,
+  "docs_with_images": 120,
+  "chunks_total": 850,
+  "chunks_text": 610,
+  "chunks_table": 120,
+  "chunks_image": 120,
+  "avg_chunk_tokens": 52.4,
+  "doc_types": {
+    "config_guide": 14,
+    "test_report": 40,
+    "kpi_analysis": 27,
+    "release_note": 13,
+    "training_deck": 13,
+    "architecture": 13
+  },
+  "parse_seconds_total": 716.9,
+  "ocr_engine": "rapidocr",
+  "fr1_satisfied": true,
+  "index": {
+    "version": "4a81075bf0",
+    "n_chunks": 850,
+    "embedder": "st:BAAI/bge-small-en-v1.5",
+    "store": "chroma",
+    "dims": 384,
+    "built_at": "2026-11-24 06:28:41",
+    "build_seconds": 72.3
+  }
+}

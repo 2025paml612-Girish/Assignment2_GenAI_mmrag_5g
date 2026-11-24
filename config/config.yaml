@@ -1,0 +1,111 @@
+# =====================================================================
+#  mmrag-5g : central configuration (every module reads from here)
+# =====================================================================
+project:
+  name: "5G / O-RAN Multimodal Document Retrieval System"
+  seed: 42
+
+paths:
+  corpus_dir: data/corpus/raw          # put your >=100 PDFs / PPTX here
+  work_dir: data/work                  # parsed elements, crops, preprocessing record
+  index_dir: data/index                # vector store + bm25 + chunk store
+  golden_set: data/golden/golden_set.jsonl
+  guard_tests: data/golden/guardrail_tests.jsonl
+  outputs_dir: outputs                 # all experiment results
+  cache_db: data/cache/cache.sqlite
+
+ingest:
+  min_documents: 100                   # FR1
+  ocr:
+    engine: auto                       # auto | rapidocr | tesseract | none
+    min_image_px: 80                   # ignore icons / logos smaller than this
+    min_confidence: 0.5
+  layout:
+    detector: heuristic                # heuristic | yolo
+    yolo_weights: null                 # path to a DocLayout-YOLO / YOLOv8 doc-layout .pt file
+    render_dpi: 150
+  convert_legacy_ppt: true             # .ppt -> .pptx through LibreOffice if available
+
+chunking:
+  strategy: recursive                  # recursive | page   (E2 compares both)
+  chunk_tokens: 220
+  overlap_tokens: 40
+  table_rows_per_chunk: 12             # big tables are split, header repeated
+
+embedding:
+  backend: auto                        # auto | sentence-transformers | tfidf
+  model: BAAI/bge-small-en-v1.5        # primary
+  alt_model: sentence-transformers/all-MiniLM-L6-v2   # E2 comparison
+  batch_size: 32
+  normalize: true
+
+vector_store:
+  backend: auto                        # auto | chroma | numpy
+  collection: mmrag_5g
+
+retrieval:
+  top_k: 4                             # chunks sent to the LLM (token budget)
+  candidate_k: 30                      # candidates per retriever before fusion
+  hybrid: true                         # dense + BM25 with reciprocal-rank fusion
+  rrf_k: 60
+  dense_weight: 1.0
+  sparse_weight: 1.0
+  modality_routing: true               # boost table / image chunks when query asks for them
+  modality_boost: 0.25
+  ontology_filter: true                # narrow candidates by topic routed from the ontology
+  rerank: auto                         # auto | true | false (cross-encoder, needs [ml] extra)
+  rerank_model: cross-encoder/ms-marco-MiniLM-L-6-v2
+
+context:
+  compress: true                       # keep only query-relevant sentences / table rows
+  max_tokens_per_chunk: 140
+  max_context_tokens: 700
+
+memory:
+  short_term_turns: 4                  # conversational window
+  rewrite: rule                        # rule | llm
+  answer_cache: true                   # long-term cache (sqlite) for repeated queries
+
+llm:
+  backend: auto                        # auto | ollama | openai_compat | extractive
+  ollama:
+    host: http://localhost:11434
+    model: qwen2.5:3b-instruct         # any local model; qwen2.5:7b-instruct for better quality
+  openai_compat:                       # Groq / Together / OpenRouter / vLLM / LM Studio
+    base_url: ${OPENAI_COMPAT_BASE_URL}
+    api_key: ${OPENAI_COMPAT_API_KEY}
+    model: ${OPENAI_COMPAT_MODEL}
+  temperature: 0.0
+  seed: 42
+  max_tokens: 220
+  timeout_s: 80                        # keeps P95 < 90 s (FR3)
+
+prompting:
+  default_variant: jinja2              # zero_shot | fstring | three_shot | jinja2 | react | create | optimized
+  optimized_prompt_file: outputs/e8_optimized_prompt.json
+
+guardrails:
+  enabled: true
+  dos:
+    max_query_chars: 1000
+    max_requests_per_minute: 30        # per session token bucket
+    max_concurrent: 4
+    burst_repeat_limit: 5              # same query repeated within 10 s
+  input:
+    block_injection: true
+    block_pii: true
+    out_of_scope_check: true
+    oos_min_domain_hits: 1
+    oos_min_retrieval_score: 0.12
+  output:
+    require_citation: true
+    min_grounding: 0.35                # share of answer content words found in cited context
+    refusal_text: "I could not find evidence for this in the indexed documents."
+
+evaluation:
+  recall_k: [1, 3, 5]
+  consistency_runs: 5                  # NFR1
+  dev_fraction: 0.5                    # self-improving prompt: dev / held-out test split
+  optimizer_iterations: 4
+  token_budget_penalty: 0.0005         # optimiser objective = quality - penalty * input_tokens
+  naive_image_tokens: 765              # tokens charged for sending one raw image (naive baseline)

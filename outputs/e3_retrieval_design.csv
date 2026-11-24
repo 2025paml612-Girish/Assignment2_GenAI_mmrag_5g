@@ -1,0 +1,7 @@
+setup,recall@1,recall@3,recall@5,mrr,recall@5_image,recall@5_table,recall@5_text,answer_accuracy,answer_acc_image,answer_acc_table,answer_acc_text
+"text-only, dense (naive baseline)",0.1944,0.3333,0.3333,0.2546,0.0,0.0,1.0,0.2778,0.0,0.0,0.8333
+"text-only, hybrid",0.2222,0.3333,0.3333,0.2778,0.0,0.0,1.0,,,,
+"multimodal, dense",0.5833,0.8333,0.8889,0.7162,1.0,0.6667,1.0,,,,
+"multimodal, hybrid",0.6944,0.9167,0.9722,0.8042,1.0,0.9167,1.0,,,,
+"multimodal, hybrid + modality routing",0.7778,0.9722,1.0,0.8727,1.0,1.0,1.0,,,,
+"multimodal, hybrid + routing + metadata filter (final)",0.8056,0.9444,1.0,0.8843,1.0,1.0,1.0,0.8611,0.8333,0.9167,0.8333

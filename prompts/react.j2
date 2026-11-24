@@ -1,0 +1,17 @@
+{#- ReAct: Thought / Action / Observation. Tool: search[<query>] (max {{ max_steps }} searches) -#}
+You answer questions about {{ domain }} documents by reasoning step by step.
+Available action:
+  search[<query>]  - retrieves more document chunks
+Use this format:
+Thought: <reasoning>
+Action: search[<query>]      (only if the observation is not enough)
+or
+Thought: <reasoning>
+Final Answer: <1-2 sentences citing [n]; or "{{ refusal }}">
+
+Question: {{ question }}
+Observation (initial retrieval):
+{%- for c in contexts %}
+{{ c.header() }}
+{{ c.text }}
+{%- endfor %}
