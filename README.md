@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # mmrag-5g - Multimodal Document Retrieval System (PCAM ZG516, Assignment 2, Part A)
 
 A retrieval-augmented question-answering system over **PDFs and PowerPoint decks** from the 5G NR / O-RAN
@@ -55,3 +56,7 @@ training decks, weekly KPI reviews) whose image facts exist **only** inside figu
 | Tokenizer  | tiktoken cl100k_base                    | regex approximation                          |
 
 All settings live in `config/config.yaml`; the metadata ontology is `config/ontology.yaml`.
+=======
+# Assignment2_GenAI_mmrag_5g
+Multimodal Document Retrieval System for 5G Network
+>>>>>>> a566b3397609c659f16b42dd316cdc583bd6cde8
