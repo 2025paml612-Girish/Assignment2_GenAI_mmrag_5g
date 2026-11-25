@@ -12,7 +12,7 @@ import time
 
 from ..config import Config
 from ..guardrails import DoSGuard, InputGuard, OutputGuard
-from ..guardrails.output_guard import CITE
+from ..guardrails.output_guard import CITE, REFUSAL
 from ..index import Index
 from ..llm import make_llm
 from ..memory import AnswerCache, ConversationMemory, Turn
@@ -127,30 +127,20 @@ class RAGSystem:
         max_tok, temp = cfg.get("llm.max_tokens", 220), cfg.get("llm.temperature", 0.0)
         ctx_meta = [(c.idx, c.text) for c in contexts]
         if variant == "react":
-            text = ""
-            for step in range(3):
-                r = self.llm.generate(messages, max_tok, temp, stop=["Observation:"], question=rewritten, contexts=ctx_meta)
-                in_tok += r.input_tokens
-                out_tok += r.output_tokens
-                fa = re.search(r"Final Answer:\s*(.*)", r.text, re.S)
-                act = re.search(r"Action:\s*search\[(.*?)\]", r.text)
-                if fa:
-                    text = fa.group(1).strip()
-                    break
-                if act and step < 2:
-                    more, _ = self.retriever.search(act.group(1), None, 2)
-                    new = [h for h in more if h.chunk.chunk_id not in {c.chunk_id for c in contexts}]
-                    extra, _ = build_context(new, act.group(1), cfg, "compressed")
-                    for e in extra:
-                        e.idx = len(contexts) + 1
-                        contexts.append(e)
-                    ctx_meta = [(c.idx, c.text) for c in contexts]
-                    obs = "\n".join(f"{c.header()}\n{c.text}" for c in extra) or "(no new results)"
-                    messages = messages + [{"role": "assistant", "content": r.text},
-                                           {"role": "user", "content": f"Observation:\n{obs}"}]
-                    continue
-                text = re.sub(r"^\s*Thought:.*?\n", "", r.text, flags=re.S).strip()
-                break
+            text, in_tok, out_tok, contexts, steps = self._react(messages, rewritten, contexts, max_tok, temp)
+            timings["react_steps"] = float(steps)
+            # Safety net: small models often refuse or break the ReAct format although the
+            # evidence is in the observation. Fall back to the single-shot jinja2 prompt on
+            # the same (possibly expanded) contexts before giving up.
+            if self._react_failed(text, contexts):
+                fb_msgs = self.prompts.build("jinja2", rewritten, contexts, route, history, instruction, demos)
+                try:
+                    r = self.llm.generate(fb_msgs, max_tok, temp, question=rewritten,
+                                          contexts=[(c.idx, c.text) for c in contexts])
+                    text, in_tok, out_tok = r.text, in_tok + r.input_tokens, out_tok + r.output_tokens
+                    timings["react_fallback"] = 1.0
+                except Exception as e:
+                    log.error("LLM fallback call failed: %s", e)
         else:
             try:
                 r = self.llm.generate(messages, max_tok, temp, question=rewritten, contexts=ctx_meta)
@@ -181,6 +171,58 @@ class RAGSystem:
             self.cache.put(ckey, a.to_dict())
         self._remember(session, query, rewritten, a, route)
         return a
+
+    # ------------------------------------------------------------------ ReAct
+    _FA = re.compile(r"Final Answer:\s*(.*)", re.S)
+    _ACT = re.compile(r"Action:\s*search\[(.*?)\]")
+    _SCAFFOLD = re.compile(r"^\s*(Thought|Action|Observation)\s*:.*$", re.M)
+
+    def _react(self, messages, question, contexts, max_tok, temp):
+        """Bounded ReAct loop: at most 2 searches, the last step must give a Final Answer."""
+        cfg = self.cfg
+        in_tok = out_tok = 0
+        text = ""
+        ctx_meta = [(c.idx, c.text) for c in contexts]
+        max_steps = 3
+        for step in range(max_steps):
+            last = step == max_steps - 1
+            msgs = messages if not last else messages + [
+                {"role": "user", "content": "No more searches. Write your Final Answer now from the observations, "
+                                            "citing [n]."}]
+            try:
+                r = self.llm.generate(msgs, max_tok, temp, stop=["Observation:"], question=question, contexts=ctx_meta)
+            except Exception as e:
+                log.error("LLM call failed in ReAct step %d: %s", step, e)
+                break
+            in_tok += r.input_tokens
+            out_tok += r.output_tokens
+            fa = self._FA.search(r.text)
+            act = self._ACT.search(r.text)
+            if fa:
+                text = fa.group(1).strip()
+                break
+            if act and not last:
+                more, _ = self.retriever.search(act.group(1), None, 2)
+                new = [h for h in more if h.chunk.chunk_id not in {c.chunk_id for c in contexts}]
+                extra, _ = build_context(new, act.group(1), cfg, "compressed")
+                for e in extra:
+                    e.idx = len(contexts) + 1
+                    contexts.append(e)
+                ctx_meta = [(c.idx, c.text) for c in contexts]
+                obs = "\n".join(f"{c.header()}\n{c.text}" for c in extra) or "(no new results)"
+                messages = messages + [{"role": "assistant", "content": r.text},
+                                       {"role": "user", "content": f"Observation:\n{obs}"}]
+                continue
+            text = self._SCAFFOLD.sub("", r.text).strip()       # no Final Answer: drop Thought/Action lines
+            break
+        return text, in_tok, out_tok, contexts, step + 1
+
+    @staticmethod
+    def _react_failed(text: str, contexts) -> bool:
+        """Empty, a pure refusal, or no valid [n] citation -> let the single-shot prompt retry."""
+        valid = {c.idx for c in contexts}
+        cited = any(int(n) in valid for n in CITE.findall(text))
+        return not text.strip() or not cited or (REFUSAL.search(text) is not None and len(CITE.findall(text)) == 0)
 
     def _remember(self, session, query, rewritten, a: Answer, route):
         ents = route.entities or (self.memory.history(session)[-1].entities if self.memory.history(session) else [])

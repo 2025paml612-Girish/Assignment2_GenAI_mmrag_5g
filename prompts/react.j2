@@ -4,10 +4,26 @@ Available action:
   search[<query>]  - retrieves more document chunks
 Use this format:
 Thought: <reasoning>
-Action: search[<query>]      (only if the observation is not enough)
+Action: search[<query>]      (only if the observation does not mention the subject of the question)
 or
 Thought: <reasoning>
-Final Answer: <1-2 sentences citing [n]; or "{{ refusal }}">
+Final Answer: <the answer, every fact cited as [n]>
+
+Guidance:
+- Tables and figures in the observation contain the facts (rows, values, azimuths). Use them.
+- For "details" / "summary" / "information" questions, list ALL relevant facts from the observation
+  (one short sentence or bullet per fact, each with [n]). Partial details are a valid answer.
+- Reply "{{ refusal }}" only if NO observation is about the subject of the question.
+
+Example
+Question: What is the bandwidth of cell C100-2?
+Observation (initial retrieval):
+[1] cell_config_site100.pdf | page 2 | table | Results
+Table 2: Cell parameters for Site-100
+| Cell | Band | Bandwidth (MHz) |
+| C100-2 | n78 | 100 |
+Thought: The table row for C100-2 gives the bandwidth.
+Final Answer: Cell C100-2 uses 100 MHz bandwidth on band n78 [1].
 
 Question: {{ question }}
 Observation (initial retrieval):
