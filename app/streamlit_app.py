@@ -10,6 +10,7 @@ sys.path.insert(0, str(ROOT / "src"))
 import streamlit as st  # noqa: E402
 
 from mmrag.config import load_config  # noqa: E402
+from mmrag.ingest.figures import figure_png  # noqa: E402
 from mmrag.pipeline.rag import RAGSystem  # noqa: E402
 from mmrag.prompting.variants import VARIANTS  # noqa: E402
 
@@ -22,6 +23,21 @@ def get_rag():
 
 
 rag = get_rag()
+
+
+@st.cache_data(show_spinner=False)
+def get_figure(chunk_id: str) -> bytes | None:
+    """Render the figure behind an image chunk from its source PDF/PPTX (cached per chunk)."""
+    chunk = rag.index.chunks.get(chunk_id)
+    return figure_png(rag.cfg, chunk) if chunk is not None else None
+
+
+def show_figures(chunk_ids: list[str]) -> None:
+    for cid in dict.fromkeys(chunk_ids):            # keep order, drop duplicates
+        png = get_figure(cid)
+        if png:
+            ch = rag.index.chunks[cid]
+            st.image(png, caption=f"{ch.source} - page {ch.page}", width=700)
 st.title("5G / O-RAN Multimodal Document Assistant")
 st.caption(f"LLM: {rag.llm.name} | embedder: {rag.index.embedder.name} | chunks: {len(rag.index.chunks)}")
 
@@ -39,17 +55,20 @@ for turn in st.session_state["log"]:
         st.write(turn["q"])
     with st.chat_message("assistant"):
         st.write(turn["a"])
+        show_figures(turn.get("figs", []))
 
 q = st.chat_input("Ask about the indexed PDFs / PPTs ...")
 if q:
     a = rag.answer(q, session="ui", variant=variant, use_cache=use_cache, use_guardrails=guards)
-    st.session_state["log"].append({"q": q, "a": a.answer})
+    cited_figs = [c["chunk_id"] for c in a.citations if c.get("modality") == "image" and c.get("chunk_id")]
+    st.session_state["log"].append({"q": q, "a": a.answer, "figs": cited_figs})
     with st.chat_message("user"):
         st.write(q)
     with st.chat_message("assistant"):
         st.write(a.answer)
         for c in a.citations:
             st.markdown(f"- **[{c['n']}]** `{c['source']}` page {c['page']} ({c['modality']})")
+        show_figures(cited_figs)                     # the actual figure(s) the answer cites
         cols = st.columns(4)
         cols[0].metric("input tokens", a.input_tokens)
         cols[1].metric("output tokens", a.output_tokens)
@@ -63,5 +82,9 @@ if q:
             for h in a.hits:
                 st.markdown(f"**{h.chunk.chunk_id}** - {h.chunk.modality} - score {h.score:.3f}")
                 st.code(h.chunk.text[:700])
+                if h.chunk.modality == "image":
+                    png = get_figure(h.chunk.chunk_id)
+                    if png:
+                        st.image(png, width=420)
         with st.expander("Timings"):
             st.json({k: round(v, 4) for k, v in a.timings.items()})
