@@ -47,6 +47,11 @@ def _score(text: str, qt: set[str]) -> float:
 def compress(hit: Hit, query: str, max_tokens: int) -> str:
     c = hit.chunk
     qt = set(tokenize(query))
+    # Tables and figures are short, fact-dense chunks: if the whole chunk fits the
+    # budget, send it whole. Trimming them to query-matching rows/lines drops the
+    # facts for broad questions ("details of Site-818" keeps only "Site-818").
+    if c.modality in ("table", "image") and count_tokens(c.text) <= max_tokens:
+        return c.text
     if c.modality == "table":
         lines = c.text.splitlines()
         cap = [l for l in lines if not l.startswith("|")]

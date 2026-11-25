@@ -45,10 +45,17 @@ class OutputGuard:
         if LEAK.search(answer):
             res.update(answer=self.refusal, refused=True, reason="output: prompt leakage")
             return res
-        if REFUSAL.search(answer):
-            res.update(answer=self.refusal, refused=True, reason="output: model found no evidence")
-            return res
         by_idx = {c.idx: c for c in contexts}
+        if REFUSAL.search(answer):
+            # A partial "X is not mentioned" next to cited facts is still a useful answer:
+            # drop only the refusal sentences. Refuse when nothing cited is left.
+            sents = re.split(r"(?<=[.!?])\s+", answer.strip())
+            kept = [x for x in sents if not REFUSAL.search(x)]
+            if kept and any(int(n) in by_idx for x in kept for n in CITE.findall(x)):
+                answer = " ".join(kept)
+            else:
+                res.update(answer=self.refusal, refused=True, reason="output: model found no evidence")
+                return res
         cited = sorted({int(n) for n in CITE.findall(answer) if int(n) in by_idx})
         if not cited:
             # repair: attach to best supporting context if well grounded

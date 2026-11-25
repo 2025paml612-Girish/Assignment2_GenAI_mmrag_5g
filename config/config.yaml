@@ -53,6 +53,7 @@ retrieval:
   modality_routing: true               # boost table / image chunks when query asks for them
   modality_boost: 0.25
   ontology_filter: true                # narrow candidates by topic routed from the ontology
+  collapse_captions: true              # caption-only text chunk -> the table / figure it captions
   rerank: auto                         # auto | true | false (cross-encoder, needs [ml] extra)
   rerank_model: cross-encoder/ms-marco-MiniLM-L-6-v2
 

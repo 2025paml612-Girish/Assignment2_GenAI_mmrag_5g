@@ -7,7 +7,10 @@ Pipeline for one query
   4. Reciprocal-rank fusion (RRF) of both rankings
   5. Modality routing boost (+ memory boost for documents used in the previous turn)
   6. Optional cross-encoder re-ranking of the fused top candidates
-  7. Modality guarantee: if the query asks for a table / image and none is in the
+  7. Caption collapse: a text chunk that is only the caption of a table / figure
+     on the same page is replaced by that table / figure chunk (the caption alone
+     carries no facts but, being short, outranks the real table/figure in BM25)
+  8. Modality guarantee: if the query asks for a table / image and none is in the
      top-k, the best chunk of that modality replaces the last slot
 Results are sorted by (-score, chunk_id) so the output is deterministic (NFR1).
 
@@ -50,6 +53,29 @@ class Retriever:
         for c in index.chunks.values():
             self._doc_text[c.doc_id] = self._doc_text.get(c.doc_id, c.title.lower()) + " " + c.text.lower()
             self._doc_topics.setdefault(c.doc_id, set()).update(t for t in c.topics.split(",") if t)
+        # (doc_id, page) -> [(caption, chunk_id)] of table / image chunks, for caption collapse
+        self._rich: dict[tuple, list[tuple[str, str]]] = {}
+        for c in index.chunks.values():
+            if c.modality in ("table", "image") and c.text.strip():
+                cap = re.sub(r"^\[Figure\]\s*", "", c.text.strip().splitlines()[0]).strip().lower()
+                if len(cap) >= 8 and not cap.startswith("|"):
+                    self._rich.setdefault((c.doc_id, c.page), []).append((cap, c.chunk_id))
+
+    def _collapse_captions(self, ranked: list[tuple[str, float]]) -> list[tuple[str, float]]:
+        """Swap caption-only text chunks for the table / figure chunk they caption."""
+        out: dict[str, float] = {}
+        for cid, sc in ranked:
+            c = self.index.chunks[cid]
+            target = cid
+            if c.modality == "text":
+                txt = c.text.strip().lower()
+                for cap, rid in self._rich.get((c.doc_id, c.page), []):
+                    if cap in txt and len(txt) <= len(cap) + 40:      # nothing beyond the caption (+ a heading)
+                        target = rid
+                        break
+            if target not in out:
+                out[target] = sc                                      # keep the best score seen
+        return sorted(out.items(), key=lambda t: (-t[1], t[0]))
 
     # ------------------------------------------------------------------
     @lru_cache(maxsize=2048)
@@ -142,6 +168,10 @@ class Retriever:
             ranked = sorted(((c, (float(s) - lo) / (hi - lo + 1e-9) + 0.5 * sc) for (c, sc), s in zip(cand, ce)),
                             key=lambda t: (-t[1], t[0]))
             info["reranked"] = True
+
+        # ---- caption collapse ---------------------------------------------
+        if cfg.get("retrieval.collapse_captions", True):
+            ranked = self._collapse_captions(ranked)
 
         hits = [Hit(self.index.chunks[c], s, dmap.get(c, 0.0), smap.get(c, 0.0)) for c, s in ranked[:k]]
         # ---- modality guarantee -----------------------------------------
